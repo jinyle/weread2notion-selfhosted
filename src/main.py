@@ -1,4 +1,5 @@
 import os
+print("Cookie内容:", os.getenv("WEREAD_COOKIE"))  # 检查是否包含 wr_rt
 import logging
 from datetime import datetime
 from weread import WeReadAPI
