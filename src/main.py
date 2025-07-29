@@ -34,7 +34,7 @@ def main():
         # 自动刷新Cookie（若手动配置无效）
 
         if not weread_cookie or "wr_rt" not in weread_cookie:
-    weread_cookie = refresh_cookie()  # 自动刷新
+            weread_cookie = refresh_cookie()  # 自动刷新
         if not weread_cookie or "wr_rt" not in weread_cookie:
             logging.warning("⚠️ Cookie无效或过期，尝试自动刷新...")
             weread_cookie = refresh_cookie()
