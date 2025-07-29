@@ -26,3 +26,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+# 在 notion.create_page 调用后添加：
+try:
+    notion_sync.create_page(book_name, highlight)
+    print(f"✅ 已同步：{book_name} - {highlight['text'][:20]}...")
+except Exception as e:
+    print(f"❌ 同步失败：{e}")
+    # 将错误写入日志文件
+    with open("error.log", "a") as f:
+        f.write(f"{datetime.now()}: {str(e)}\n")
